@@ -83,15 +83,14 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/moeenxban/medpal-website-.git
-```
-
-Navigate to the project:
-
-```bash
 cd medpal-website-
 ```
 
-Open `index.html` in your browser or use a local development server.
+### Option A: Double-Click Batch File (Recommended)
+Simply double-click `start_website.bat`. It will launch a local server on port 3000 and automatically open `http://localhost:3000` in your browser.
+
+### Option B: Open Directly
+Double-click `index.html` to open it in your browser.
 
 ---
 

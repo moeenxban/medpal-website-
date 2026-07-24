@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwindcss -i css/input.css -o css/style.css -m"
+    "build:css": "tailwindcss -i css/input.css -o css/style.css --content \"./index.html\" -m"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/moeenxban/medpal-website-#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.3.3",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^3.4.19"
   }
 }
