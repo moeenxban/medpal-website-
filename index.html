@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moeenxban.github.io/medpal-website-/">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b82f6'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Inter'>M</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { font-family: 'Inter', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
@@ -135,7 +135,10 @@
                 <div class="fade-in hidden lg:block relative">
                     <div class="absolute -inset-10 bg-blue-500/10 rounded-3xl blur-3xl"></div>
                     <div class="relative mockup-shadow rounded-3xl overflow-hidden border border-white/10">
-                        <img src="gui.jpeg" alt="JR's MedPal Desktop App - showing chat interface with avatar video" class="w-full" loading="lazy">
+                        <picture>
+                            <source srcset="gui.webp" type="image/webp">
+                            <img src="gui.jpeg" alt="JR's MedPal Desktop App - showing chat interface with avatar video" class="w-full" width="1280" height="800" loading="eager" decoding="async">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -177,7 +180,10 @@
                     </div>
                     <div class="glass rounded-3xl overflow-hidden">
                         <div class="placeholder-slot" style="min-height:320px">
-                            <img src="gui.jpeg" alt="Doctor Mode - clinical intake conversation screenshot showing SOCRATES-based questions" loading="lazy">
+                            <picture>
+                                <source srcset="gui.webp" type="image/webp">
+                                <img src="gui.jpeg" alt="Doctor Mode - clinical intake conversation screenshot showing SOCRATES-based questions" width="1280" height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -201,7 +207,10 @@
                     </div>
                     <div class="glass rounded-3xl overflow-hidden">
                         <div class="placeholder-slot" style="min-height:320px">
-                            <img src="proffesor_mode.jpeg" alt="Professor Mode - medical tutoring conversation screenshot showing case study generation" loading="lazy">
+                            <picture>
+                                <source srcset="professor_mode.webp" type="image/webp">
+                                <img src="professor_mode.jpeg" alt="Professor Mode - medical tutoring conversation screenshot showing case study generation" width="1280" height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -225,7 +234,10 @@
                     </div>
                     <div class="glass rounded-3xl overflow-hidden">
                         <div class="placeholder-slot" style="min-height:320px">
-                            <img src="patient_mode.jpeg" alt="Patient Mode - patient simulation conversation screenshot showing realistic symptom responses" loading="lazy">
+                            <picture>
+                                <source srcset="patient_mode.webp" type="image/webp">
+                                <img src="patient_mode.jpeg" alt="Patient Mode - patient simulation conversation screenshot showing realistic symptom responses" width="1280" height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -252,7 +264,10 @@
                 </div>
                 <div class="fade-in relative">
                     <div class="placeholder-slot" style="min-height:360px; border-radius: 24px;">
-                        <img src="gui.jpeg" alt="Annie Voice AI - showing text-to-speech and speech-to-text interface with audio wave visualization" loading="lazy">
+                        <picture>
+                            <source srcset="gui.webp" type="image/webp">
+                            <img src="gui.jpeg" alt="Annie Voice AI - showing text-to-speech and speech-to-text interface with audio wave visualization" width="1280" height="800" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -305,7 +320,10 @@
                 </div>
                 <div class="fade-in order-1 lg:order-2">
                     <div class="placeholder-slot" style="min-height:380px; border-radius: 24px;">
-                        <img src="gui.jpeg" alt="Custom Knowledge Base - showing how MedPal trains on your medical textbooks with vector storage" loading="lazy">
+                        <picture>
+                            <source srcset="gui.webp" type="image/webp">
+                            <img src="gui.jpeg" alt="Custom Knowledge Base - showing how MedPal trains on your medical textbooks with vector storage" width="1280" height="800" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -481,7 +499,40 @@
         
         // Form
         if(window.location.hash==='#submitted'){document.getElementById('contact-form').classList.add('hidden');document.getElementById('form-success').classList.remove('hidden');}
-        document.getElementById('contact-form').addEventListener('submit',function(){var b=this.querySelector('button[type="submit"]');b.innerText='Sending...';b.disabled=true;});
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = form.querySelector('button[type="submit"]');
+            var origText = btn.innerText;
+            btn.innerText = 'Sending Request...';
+            btn.disabled = true;
+            
+            var formData = new FormData(form);
+            
+            fetch('https://formsubmit.co/ajax/banoorimoeen@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    form.reset();
+                    form.classList.add('hidden');
+                    document.getElementById('form-success').classList.remove('hidden');
+                } else {
+                    alert('Something went wrong. Please try submitting again or email directly to banoorimoeen@gmail.com');
+                    btn.innerText = origText;
+                    btn.disabled = false;
+                }
+            })
+            .catch(function(error) {
+                alert('Network error. Please check your connection and try again.');
+                btn.innerText = origText;
+                btn.disabled = false;
+            });
+        });
     </script>
 </body>
 </html>

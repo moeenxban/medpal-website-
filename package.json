@@ -1,0 +1,26 @@
+{
+  "name": "medpal-website-",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img src=\"public/logo.png\" alt=\"MedPal Logo\" width=\"180\"/>\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i css/input.css -o css/style.css -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moeenxban/medpal-website-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/moeenxban/medpal-website-/issues"
+  },
+  "homepage": "https://github.com/moeenxban/medpal-website-#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

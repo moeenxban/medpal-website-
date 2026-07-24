@@ -100,26 +100,29 @@ Open `index.html` in your browser or use a local development server.
 ```
 medpal-website-/
 │
-├── assets/
 ├── css/
-├── js/
-├── images/
-├── index.html
-└── README.md
+│   ├── input.css        # Tailwind CSS entrypoint
+│   └── style.css        # Compiled & minified static CSS bundle
+├── gui.webp / gui.jpeg             # Desktop app UI screenshot (Main Doctor Chat)
+├── patient_mode.webp / jpeg       # Patient Simulation Mode screenshot
+├── professor_mode.webp / jpeg     # Professor Tutoring Mode screenshot
+├── index.html           # Main landing page markup & scripts
+├── package.json         # Build dependencies & CSS compilation script
+└── README.md            # Project documentation
 ```
-
-*(Update the folders above if your structure differs.)*
 
 ---
 
 ## 📸 Preview
 
-Add screenshots of:
+### 🩺 Main Desktop Interface (Doctor Mode)
+![Home Page & Main Doctor Chat UI](gui.webp)
 
-* Home Page
-* Features Section
-* Technology Section
-* Contact Section
+### 🎓 Professor Mode (Medical Tutor)
+![Professor Mode UI](professor_mode.webp)
+
+### 👤 Patient Mode (Symptom Simulation)
+![Patient Mode UI](patient_mode.webp)
 
 ---
 
