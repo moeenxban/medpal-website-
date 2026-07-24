@@ -83,14 +83,15 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/moeenxban/medpal-website-.git
+```
+
+Navigate to the project:
+
+```bash
 cd medpal-website-
 ```
 
-### Option A: Double-Click Batch File (Recommended)
-Simply double-click `start_website.bat`. It will launch a local server on port 3000 and automatically open `http://localhost:3000` in your browser.
-
-### Option B: Open Directly
-Double-click `index.html` to open it in your browser.
+Open `index.html` in your browser or use a local development server.
 
 ---
 
@@ -99,29 +100,26 @@ Double-click `index.html` to open it in your browser.
 ```
 medpal-website-/
 │
+├── assets/
 ├── css/
-│   ├── input.css        # Tailwind CSS entrypoint
-│   └── style.css        # Compiled & minified static CSS bundle
-├── gui.webp / gui.jpeg             # Desktop app UI screenshot (Main Doctor Chat)
-├── patient_mode.webp / jpeg       # Patient Simulation Mode screenshot
-├── professor_mode.webp / jpeg     # Professor Tutoring Mode screenshot
-├── index.html           # Main landing page markup & scripts
-├── package.json         # Build dependencies & CSS compilation script
-└── README.md            # Project documentation
+├── js/
+├── images/
+├── index.html
+└── README.md
 ```
+
+*(Update the folders above if your structure differs.)*
 
 ---
 
 ## 📸 Preview
 
-### 🩺 Main Desktop Interface (Doctor Mode)
-![Home Page & Main Doctor Chat UI](gui.webp)
+Add screenshots of:
 
-### 🎓 Professor Mode (Medical Tutor)
-![Professor Mode UI](professor_mode.webp)
-
-### 👤 Patient Mode (Symptom Simulation)
-![Patient Mode UI](patient_mode.webp)
+* Home Page
+* Features Section
+* Technology Section
+* Contact Section
 
 ---
 
